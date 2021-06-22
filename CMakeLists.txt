@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.19)
-project(tmp)
+project(binary-tree)
 
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(
-        tmp
+        binary-tree
         main.cpp
         AbstractNode.h AbstractNode.cpp
         AbstractVisitor.h AbstractVisitor.cpp
