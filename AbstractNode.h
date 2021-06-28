@@ -8,7 +8,8 @@
 class AbstractVisitor;
 class AbstractNode {
  public:
-  virtual long long int accept(AbstractVisitor &abstract_visitor) = 0;
+  virtual long long int accept_evaluate(AbstractVisitor &abstract_visitor) = 0;
+  virtual void accept_print(AbstractVisitor &abstract_visitor) = 0;
   virtual ~AbstractNode() = 0;
 };
 

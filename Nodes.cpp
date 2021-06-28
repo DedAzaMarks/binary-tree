@@ -1,28 +1,65 @@
 //
 // Created by Maxim Bordyugov on 22/06/2021.
 //
+#include <iostream>
 
 #include "Nodes.h"
 
-long long int NumberNode::accept(AbstractVisitor &abstract_visitor) {
-  return abstract_visitor.visit(*this);
-}
+using std::cout;
 
-long long int MinusNode::accept(AbstractVisitor &abstract_visitor) {
+// NumberNode
+NumberNode::NumberNode(long long int v) {
+  val = v;
+}
+long long int NumberNode::accept_evaluate(AbstractVisitor &abstract_visitor) {
   return abstract_visitor.visit(*this);
 }
+void NumberNode::accept_print(AbstractVisitor &abstract_visitor) {
+  abstract_visitor.print(*this);
+}
+NumberNode::~NumberNode() = default;
 
-long long int AddNode::accept(AbstractVisitor &abstract_visitor) {
+//MinusNode
+long long int MinusNode::accept_evaluate(AbstractVisitor &abstract_visitor) {
   return abstract_visitor.visit(*this);
 }
+void MinusNode::accept_print(AbstractVisitor &abstract_visitor) {
+  abstract_visitor.print(*this);
+}
+MinusNode::~MinusNode() = default;
 
-long long int SubNode::accept(AbstractVisitor &abstract_visitor) {
+//AddNode
+long long int AddNode::accept_evaluate(AbstractVisitor &abstract_visitor) {
   return abstract_visitor.visit(*this);
 }
+void AddNode::accept_print(AbstractVisitor &abstract_visitor) {
+  abstract_visitor.print(*this);
+}
+AddNode::~AddNode() = default;
 
-long long int MulNode::accept(AbstractVisitor &abstract_visitor) {
+//SubNode
+long long int SubNode::accept_evaluate(AbstractVisitor &abstract_visitor) {
   return abstract_visitor.visit(*this);
 }
-long long int DivNode::accept(AbstractVisitor &abstract_visitor) {
+void SubNode::accept_print(AbstractVisitor &abstract_visitor) {
+  abstract_visitor.print(*this);
+}
+SubNode::~SubNode() = default;
+
+//MulNode
+long long int MulNode::accept_evaluate(AbstractVisitor &abstract_visitor) {
   return abstract_visitor.visit(*this);
 }
+void MulNode::accept_print(AbstractVisitor &abstract_visitor) {
+  abstract_visitor.print(*this);
+}
+MulNode::~MulNode() = default;
+
+//DivNode
+void DivNode::accept_print(AbstractVisitor &abstract_visitor) {
+  abstract_visitor.print(*this);
+}
+long long int DivNode::accept_evaluate(AbstractVisitor &abstract_visitor) {
+  return abstract_visitor.visit(*this);
+}
+DivNode::~DivNode() = default;
