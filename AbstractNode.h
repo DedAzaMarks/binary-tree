@@ -5,11 +5,10 @@
 #ifndef ROMAN_NUMERALS_PATTERNVISITOR_ABSTRACTNODE_H_
 #define ROMAN_NUMERALS_PATTERNVISITOR_ABSTRACTNODE_H_
 
-#include "AbstractVisitor.h"
-
+class AbstractVisitor;
 class AbstractNode {
  public:
-  virtual long long int accept(AbstractVisitor& visitor) = 0;
+  virtual long long int accept(AbstractVisitor &abstract_visitor) = 0;
   virtual ~AbstractNode() = 0;
 };
 
