@@ -10,6 +10,5 @@ add_executable(
         main.cpp
         AbstractNode.h AbstractNode.cpp
         AbstractVisitor.h
-        NodeVisitor.h NodeVisitor.cpp
         Nodes.h Nodes.cpp
         Visitor.cpp Visitor.h)

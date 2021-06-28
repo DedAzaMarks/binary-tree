@@ -17,7 +17,7 @@ int main() {
   add.r = make_shared<MulNode>(mul);
 
   Visitor visitor;
-  std:: cout << add.accept_evaluate(visitor) << "\n";
   add.accept_print(visitor);
+  std::cout << " = " << add.accept_evaluate(visitor) << "\n";
   return 0;
 }
