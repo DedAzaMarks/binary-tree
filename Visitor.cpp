@@ -20,6 +20,7 @@ long long int Visitor::visit(MinusNode &minus_node) {
   return -minus_node.node->accept_evaluate(*this);
 }
 void Visitor::print(MinusNode &minus_node) {
+  cout << "-";
   minus_node.node->accept_print(*this);
 }
 

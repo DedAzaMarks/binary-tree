@@ -5,6 +5,14 @@
 
 using std::make_shared;
 
+template<typename T>
+void f(T node) {
+  Visitor visitor;
+
+  node.accept_print(visitor);
+  std::cout << " = " << node.accept_evaluate(visitor) << "\n";
+}
+
 int main() {
   NumberNode two(2);
   NumberNode three(3);
@@ -16,8 +24,11 @@ int main() {
   add.l = make_shared<NumberNode>(two);
   add.r = make_shared<MulNode>(mul);
 
-  Visitor visitor;
-  add.accept_print(visitor);
-  std::cout << " = " << add.accept_evaluate(visitor) << "\n";
+  f(add);
+
+  MinusNode mFifteen;
+  mFifteen.node = make_shared<NumberNode>(15);
+  
+  f(mFifteen);
   return 0;
 }
